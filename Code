@@ -1,0 +1,61 @@
+#include<stdio.h>
+
+unsigned int  prime(unsigned int,unsigned int);
+
+int main()
+
+{
+
+unsigned int num,value; 
+
+printf("enter the positive number which is to be checked");
+
+scanf("%u",&num); 
+
+if(num==1)
+
+printf("it is neither prime nor composite");
+
+else
+
+{value=prime(num,num/2);
+
+if(value==1)
+
+printf ("it is prime");
+
+else 
+
+printf ("it is composite");
+
+}  
+
+}
+
+unsigned int  prime(unsigned int m,unsigned int n)
+
+{ static int j; 
+
+  if(n==1) 
+
+ { 
+
+   return j+1;}
+
+  else 
+
+{
+
+  if(m%n==0) 
+
+  j++; 
+
+  else 
+
+  return prime(m,n-1);
+
+} 
+
+}
+
+  
